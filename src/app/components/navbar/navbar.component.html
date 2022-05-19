@@ -1,0 +1,27 @@
+<nav class="navbar navbar-light bg-light fixed-top">
+  <div class="container-fluid">
+    <img src="assets/logo-1.PNG" alt="Logo da aplicação" style="width: 180px;">
+  <ng-template #content let-offcanvas>
+    <div class="offcanvas-header">
+      <h4 class="offcanvas-title">Soul Games</h4>
+      <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+    </div>
+    <div class="offcanvas-body">
+      
+      
+      <ul>
+        <li>Acessórios</li>
+        <li>Consoles</li>
+        <li>Controles</li>
+        <li>Fones</li>
+      </ul>
+      <div class="text-end">
+        <button class="btn btn-outline-primary" (click)="offcanvas.close('Close click')">Fechar</button>
+      </div>
+    </div>
+  </ng-template>
+  <button aria-controls="offcanvasNavbar" data-bs-target="#offcanvasNavbar" class=" btn btn-lg-1 btn-outline-primary" data-bs-toggle="offcanvas" (click)="open(content)">
+   <span class="navbar-toggler-icon"></span>
+  </button>
+  </div>
+</nav>
