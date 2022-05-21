@@ -1,0 +1,88 @@
+<div class="body d-flex justify-content-center align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 d-flex align-items-center justify-content-center flex-column mb-3">
+                <a href=""><img src="assets/logo-1.PNG" alt="Logo da aplicação" style="width: 260px;"></a>
+                <h3 class="titulo">Cadastre-se</h3>
+                <button class="btnGoogle mb-4 text-center cursor-pointer">
+                    <img style="width: 26px; margin-right: 4px;" src="assets/icon-google.png" alt="">
+                    Cadastrar com o Google
+                </button>
+                <div class="position-relative mb-3">
+                    <div class="line ofusc">Ou</div>
+                </div>
+                <form [formGroup]="cadastroForm">
+                    <div class="inputCadastro mb-5">
+                        <input formControlName="email" type="email" placeholder="E-mail *">
+                        <small style="display: block;" class="text-danger" *ngIf="email?.touched && email?.invalid">
+                            <span *ngIf="email?.hasError('required')">O email é obrigatório</span>
+                            <span *ngIf="email?.hasError('email')">O email é inválido</span>
+                        </small>
+                    </div>
+                    <div class="inputCadastro mb-5">
+                        <input formControlName="senha" type="password" placeholder="Crie sua senha *">
+                        <small style="display: block;" class="text-danger" *ngIf="senha?.touched && senha?.invalid">
+                            <span *ngIf="senha?.hasError('required')">A senha é obrigatoria</span>
+                            <span *ngIf="senha?.hasError('minlength')">No minimo 8 digitos!</span>
+                        </small>
+                    </div>
+                    <div class="inputCadastro mb-5">
+                        <input formControlName="cpf" type="text" placeholder="CPF *" maxlength="11">
+                        <small style="display: block;" class="text-danger" *ngIf="cpf?.touched && cpf?.invalid">
+                            <span *ngIf="cpf?.hasError('required')">CPF obrigatorio!</span>
+                            <span *ngIf="cpf?.hasError('minlength')">No minimo 11 digitos!</span>
+                        </small>
+                    </div>
+                    <div class="inputCadastro mb-5">
+                        <input formControlName="cep" type="text" placeholder="CEP *">
+                        <small style="display: block;" class="text-danger" *ngIf="cep?.touched && cep?.invalid">
+                            <span *ngIf="cep?.hasError('required')">CEP obrigatorio!</span>
+                            <span *ngIf="cep?.hasError('minlength')">No minimo 8 digitos!</span>
+                        </small>
+                    </div>
+                    <div class="inputCadastro mb-5">
+                        <input formControlName="rua" type="text" placeholder="Rua *">
+                        <small style="display: block;" class="text-danger" *ngIf="rua?.touched && rua?.invalid">
+                            <span *ngIf="rua?.hasError('required')">Nome da rua obrigatoria!</span>
+                        </small>
+                    </div>
+                    <div class="inputCadastro mb-5 d-flex">
+                        <span>
+                            <input style="width: 270px;" formControlName="cidade" type="text " placeholder="Cidade * ">
+                            <small style="display: block;" class="text-danger" *ngIf="cidade?.touched && cidade?.invalid">
+                                <span *ngIf="cidade?.hasError('required')">Cidade é obrigatoria!</span>
+                        </small>
+                        </span>
+                        <span>
+                            <input  formControlName="estado" style="width: 100px; margin-left: 10px; " type="Estado " name="Estado " id=" " placeholder="Estado * ">
+                            <small style="display: block;" class="text-danger" *ngIf="estado?.touched && estado?.invalid">
+                                <span *ngIf="estado?.hasError('required')">Estado obrigatorio!</span>
+                        </small>
+                        </span>
+                    </div>
+                </form>
+                <button class="btnCadastro mb-10 cursor-pointer ">Cadastrar</button>
+                <p class="mt-2 ">Você já tem uma conta?<button class="btn btn-link ">Login</button></p>
+            </div>
+            <div class="col-6 ">
+                <img class="w-100 " src="https://images.pexels.com/photos/2007647/pexels-photo-2007647.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 " alt=" ">
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="footer ">
+        <p class="mt-5 ">FORMAS DE PAGAMENTO</p>
+        <p><img class="img-footer " src="assets/pag.png " alt=" "></p>
+        <hr class="bg-light ">
+    </div>
+    <div class="footer2 ">
+        <div>INSTITUCIONAL</div>
+        <br>
+        <div>DÚVIDAS</div>
+        <br>
+        <div>CLIENTE</div>
+        <br>
+        <div>AJUDA</div>
+    </div>
+</footer>
