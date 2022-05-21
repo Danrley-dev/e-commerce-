@@ -1,0 +1,114 @@
+.body {
+    background-color: #EDEDED;
+    height: 100vh;
+}
+
+img {
+    margin-left: 12px;
+    border-radius: 0 10px 10px 0;
+}
+
+.titulo {
+    color: #1290CB;
+    font-weight: bold;
+}
+
+.inputCadastro input {
+    width: 380px;
+    border: none;
+    border-bottom: 2px solid rgba(74, 74, 74, 0.434);
+}
+
+.inputCadastro input:focus,
+.inputCadastro input:active {
+    border-color: #1290CB;
+}
+
+.inputCadastro input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+
+.btnGoogle {
+    font-size: 18px;
+    font-weight: 600;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #1290CB;
+    border: 2px solid #1290CB;
+    width: 380px;
+    height: 48px;
+}
+
+.btnGoogle:hover {
+    color: #ffff;
+    background-color: #1290CB;
+}
+
+.btnCadastro {
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #1290CB;
+    color: #ffffff;
+    border-radius: 5px;
+    border: 2px solid #1290CB;
+    width: 380px;
+    height: 48px;
+}
+
+.btnCadastro:hover {
+    color: #1290CB;
+    background-color: transparent;
+}
+
+.line::before {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 164px;
+    bottom: 10px;
+    left: 38px;
+    border-radius: 8px;
+    background: rgba(74, 74, 74, 0.434);
+}
+
+.line::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 164px;
+    bottom: 10px;
+    left: -178px;
+    border-radius: 8px;
+    background: rgba(74, 74, 74, 0.434);
+}
+
+.ofusc {
+    color: rgba(74, 74, 74, 0.434);
+    font-weight: 500;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.885);
+    height: 500px;
+    width: 100%;
+    position: absolute;
+}
+
+.footer p {
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.footer2 {
+    color: white;
+    text-align: center;
+    margin-left: 40px;
+}
