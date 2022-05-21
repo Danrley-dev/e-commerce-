@@ -1,1 +1,83 @@
-<p>home works!</p>
+<div class="flex-container">
+  <div class="catProd">
+    <a href="#"><img class="imgCategoria" src="assets/colecionaveis.png" alt="Playstation 2"> </a>
+    <hr>
+    <h2 class="text-center ">Colecionáveis</h2>
+    <p>A primeira e maior loja de itens colecionáveis do país, trazendo tudo que você imagina para os amantes da
+      história dos games</p>
+  </div>
+  <div class="catProd">
+    <a href="#"><img class="imgCategoria" src="assets/res.png" alt="Playstation 2"></a>
+    <hr>
+    <h2 class="text-center ">Jogos</h2>
+    <p>Contendo um enorme estoque e variedades em games, somos considerados uma das maiores e melhores lojas nesse
+      seguimento.</p>
+  </div>
+  <div class="catProd">
+    <a href="#"><img class="imgCategoria" src="assets/consoles1.png" alt="Playstation 2"> </a>
+    <hr>
+    <h2 class="text-center ">Consoles</h2>
+    <p>Nossa loja é especializada em games, com uma enorme variedade em consoles para todos os gostos.</p>
+  </div>
+</div>
+
+<div class="m-auto containerPromo">
+  <ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" [interval]="3500">
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper promoBanner">
+        <img [src]="images[0]" alt="Random first slide">
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper promoBanner">
+        <img [src]="images[1]" alt="Random second slide">
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+
+<h1 style="font-weight:bold ;">PROMOÇÃO SEMANAL</h1>
+
+<div class="Promo">
+  <div *ngFor="let produto of array" class="Promodiv">
+    <img [src]="produto.imagem" class="card-img-top produto-img efeito" alt="Imagens dos produtos em ofertas">
+    <div class="card-body">
+      <h5 class="card-title">{{produto.nomeDoProduto}}</h5>
+      <p class="card-text">{{produto.descricao}} </p>
+      <h3 class="text-success" [ngClass]="{'text-muted riscado': produto.emPromocao}">{{produto.preco | currency:"BRL"}}
+      </h3>
+      <div *ngIf="produto.emPromocao">
+        <h3 class="text-success">{{precoDesconto(produto) | currency:"BRL"}}</h3>
+        <h3><span class="badge bg-success">{{produto.desconto | percent}} OFF</span></h3>
+      </div>
+
+      <div [ngSwitch]="produto.categoria">
+        <span class="badge bg-info" *ngSwitchCase="'jogos'">Jogos</span>
+        <span class="badge bg-primary" *ngSwitchCase="'acessorios'">Acessórios</span>
+        <span class="badge bg-danger" *ngSwitchCase="'colecionaveis'">Colecionáveis</span>
+        <span class="badge bg-secondary" *ngSwitchCase="'consoles'">Consoles</span>
+        <span class="badge bg-dark" *ngSwitchDefault>Outros</span>
+      </div>
+      <br>
+      <button (click)="onComprar(produto)" class="btn btn-primary">Comprar</button>
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer">
+    <p class="mt-5">FORMAS DE PAGAMENTO</p>
+    <p><img class="img-footer" src="assets/pag.png" alt=""></p>
+    <hr class="bg-light">
+  </div>
+  <div class="footer2">
+    <div>INSTITUCIONAL</div>
+    <br>
+    <div>DÚVIDAS</div>
+    <br>
+   <div>CLIENTE</div>
+    <br>
+    <div>AJUDA</div>
+  </div>
+</footer>
