@@ -1,0 +1,41 @@
+<div class="body d-flex align-items-center justify-content-center">
+    <div class="container">
+    <div class="row">
+    <div class="col-6 d-flex align-items-center justify-content-center flex-column mb-3">
+    <a href="./"><img src="assets/logo-1.PNG" alt="Logo da aplicação" style="width: 280px;"></a>
+    <h2 class="colorBlue">Feedback</h2>
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()" class="m-1" >
+        <div class="inputFeedback mb-5">
+            <input formControlName="nome" type="nome" placeholder="Nome *">
+            <small style="display: block;" class="text-danger" *ngIf="nome?.touched && nome?.invalid">
+                <span *ngIf="nome?.hasError('required')">O nome é obrigatório</span>
+                <span *ngIf="nome?.hasError('minlength')"> mínimo é 3 caracteres</span>
+        </small>
+        </div>
+        <div class="inputFeedback mb-5">
+            <input formControlName="email" type="email" placeholder="Email *">
+            <small style="display: block;" class="text-danger" *ngIf="email?.touched && email?.invalid">
+                <span *ngIf="email?.hasError('required')">O email é obrigatório</span>
+                <span *ngIf="email?.hasError('email')"> O email é invalido</span>
+            </small>
+        </div>
+        <div class="inputComentario mb-5">
+            <textarea id="story" name="story" rows="5" cols="38" placeholder="Digite seu comentario:"></textarea>
+           
+        </div>
+        <div class="inputFeedback mb-5">
+            <input formControlName="nota" type="number" placeholder="Nota *">
+            <small style="display: block;" class="text-danger" *ngIf="nota?.touched && nota?.invalid">
+                <span *ngIf="nota?.hasError('required')">A nota é obrigatória</span>
+                <span *ngIf="nota?.hasError('min' && 'max')"> O mínimo é 0 e o máximo é 10</span>
+            </small>
+        </div>
+        <button type="submit" class="btnFeedback" [disabled]="feedbackForm.invalid">Cadastrar</button>
+    </form>
+</div>
+<div class="col-6">
+    <img class="imgFoto w-100" src="assets/pagina.jpeg" alt="Logo de Feedback">
+</div>
+</div>
+</div>
+</div>

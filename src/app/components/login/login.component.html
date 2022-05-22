@@ -1,0 +1,29 @@
+<div class="body d-flex align-items-center justify-content-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 d-flex align-items-center justify-content-center flex-column">
+        <a href="./"><img src="assets/logo-1.PNG" alt="Logo da aplicação" style="width: 280px;"></a>
+        <h2 class="colorBlue">Login</h2>
+        <p>Novo no site? <a href="./cadastro"><button class="btn btn-link">Cadastre-se</button></a></p>
+        <form #loginForm="ngForm" class="m-1" (ngSubmit)="onSubmit()">
+          <div class="mb-5">
+            <input #emailInp="ngModel" [(ngModel)]="email" id="email" name="email" type="email"
+              class="form-control inputLogin" placeholder="Seu email " required />
+            <small ngIf="emailInp.touched && emailInp.invalid" class="text-danger">O campo é inválido</small>
+          </div>
+          <div class="mb-5">
+            <input #senhaInp="ngModel" [(ngModel)]="senha" id="senha" name="senha" type="password"
+              class="form-control inputLogin" placeholder="Sua senha " required />
+            <small *ngIf="senhaInp.touched && senhaInp.invalid" class="text-danger">O campo é inválido </small>
+            <br>
+            <button class="btn btn-link">Esqueceu sua senha?</button>
+          </div>
+          <button type="submit" class="btnLogin" [disabled]="loginForm.invalid">Login</button>
+        </form>
+      </div>
+      <div class="col-6">
+        <img class="imgFoto w-100" src="assets/gamer3.jpg" alt="Logo de login">
+      </div>
+    </div>
+  </div>
+</div>
