@@ -9,7 +9,7 @@ export class LoginComponent implements OnInit {
   email: string = '';
   senha: string = '';
 
-  onSubmit () {
+  onSubmit() {
     alert(`Bem-vindo(a) ${this.email}`);
   }
 
