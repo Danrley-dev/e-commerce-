@@ -34,27 +34,28 @@
                         </small>
                     </div>
                     <div class="inputCadastro mb-5">
-                        <input formControlName="cep" type="text" placeholder="CEP *">
+                        <input (blur)="consultaCep($event, cadastroForm)" name="cep" 
+                       id="cep" formControlName="cep" type="text" placeholder="CEP *">
                         <small style="display: block;" class="text-danger" *ngIf="cep?.touched && cep?.invalid">
                             <span *ngIf="cep?.hasError('required')">CEP obrigatorio!</span>
                             <span *ngIf="cep?.hasError('minlength')">No minimo 8 digitos!</span>
                         </small>
                     </div>
                     <div class="inputCadastro mb-5">
-                        <input formControlName="rua" type="text" placeholder="Rua *">
+                        <input formControlName="rua" name="logradouro" type="text" placeholder="Rua *">
                         <small style="display: block;" class="text-danger" *ngIf="rua?.touched && rua?.invalid">
                             <span *ngIf="rua?.hasError('required')">Nome da rua obrigatoria!</span>
                         </small>
                     </div>
                     <div class="inputCadastro mb-5 d-flex">
                         <span>
-                            <input style="width: 270px;" formControlName="cidade" type="text " placeholder="Cidade * ">
+                            <input name="cidade" style="width: 270px;" formControlName="cidade" type="text " placeholder="Cidade * ">
                             <small style="display: block;" class="text-danger" *ngIf="cidade?.touched && cidade?.invalid">
                                 <span *ngIf="cidade?.hasError('required')">Cidade é obrigatoria!</span>
                         </small>
                         </span>
                         <span>
-                            <input  formControlName="estado" style="width: 100px; margin-left: 10px; " type="Estado " name="Estado " id=" " placeholder="Estado * ">
+                            <input formControlName="estado" style="width: 100px; margin-left: 10px; " type="text" name="uf" id="uf " placeholder="Estado * ">
                             <small style="display: block;" class="text-danger" *ngIf="estado?.touched && estado?.invalid">
                                 <span *ngIf="estado?.hasError('required')">Estado obrigatorio!</span>
                         </small>
@@ -62,7 +63,7 @@
                     </div>
                 </form>
                 <button class="btnCadastro mb-10 cursor-pointer ">Cadastrar</button>
-                <p class="mt-2 ">Você já tem uma conta?<button class="btn btn-link ">Login</button></p>
+                <p class="mt-2 ">Você já tem uma conta?<a href="./login"><button class="btn btn-link ">Login</button></a></p>
             </div>
             <div class="col-6 ">
                 <img class="w-100 " src="https://images.pexels.com/photos/2007647/pexels-photo-2007647.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940 " alt=" ">
@@ -70,6 +71,7 @@
         </div>
     </div>
 </div>
+
 <footer>
     <div class="footer ">
         <p class="mt-5 ">FORMAS DE PAGAMENTO</p>

@@ -38,3 +38,23 @@
     box-shadow: 0 0 0 0;
     outline: 0;
 }
+
+footer {
+    background-color: rgba(0, 0, 0, 0.885);
+    height: 500px;
+    width: 100%;
+    position: absolute;
+}
+
+.footer p {
+    position: relative;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.footer2 {
+    color: white;
+    text-align: center;
+    margin-left: 40px;
+}

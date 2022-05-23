@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { CepServiceService } from 'src/app/shared/sevicos/cep-service.service';
 
 @Component({
   selector: 'app-cadastro',
@@ -8,7 +9,20 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class CadastroComponent implements OnInit {
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private cepService: CepServiceService) { }
+
+  consultaCep(event:any, form:any){
+    this.cepService.getBuscar(event.target.value).subscribe((dados)=> this.populaForm(dados, form));
+  }
+
+  populaForm(dados:any, form:any){
+      form.patchValue({
+        cep: dados.cep,
+        rua: dados.logradouro,
+        cidade: dados.localidade,
+        estado:dados.uf
+  })
+  }
 
   cadastroForm = this.fb.group({
     email: ["", [Validators.required, Validators.email]],
