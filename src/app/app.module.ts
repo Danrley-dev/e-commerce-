@@ -11,6 +11,7 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { FeedbackComponent } from './components/feedback/feedback.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,8 +29,9 @@ import { FeedbackComponent } from './components/feedback/feedback.component';
     AppRoutingModule,
     ReactiveFormsModule,
     NgbModule,
-    FormsModule
-  ],
+    FormsModule,
+    HttpClientModule
+,],
   providers: [],
   bootstrap: [AppComponent]
 })
